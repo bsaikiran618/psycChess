@@ -3,15 +3,13 @@
 	#define BISHOP
 
 #include "../Piece.h"
+#include "../Game.h"
 
 
 class Bishop : public Piece
 {
 	public:
-	Bishop()
-	{
-		
-	}
+	Bishop(Color, Square *);
 };
 
 #endif

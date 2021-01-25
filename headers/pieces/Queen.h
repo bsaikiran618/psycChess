@@ -3,15 +3,13 @@
 	#define QUEEN
 
 #include "../Piece.h"
+#include "../Game.h"
 
 
 class Queen : public Piece
 {
 	public:
-	Queen()
-	{
-		
-	}
+	Queen(Color c, Square *);
 };
 
 #endif

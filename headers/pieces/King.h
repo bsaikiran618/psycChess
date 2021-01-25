@@ -3,15 +3,13 @@
 	#define KING
 
 #include "../Piece.h"
+#include "../Game.h"
 
 
 class King : public Piece
 {
 	public:
-	King()
-	{
-		
-	}
+	King(Color c, Square *);
 };
 
 #endif

@@ -3,15 +3,13 @@
 	#define ROOK
 
 #include "../Piece.h"
+#include "../Game.h"
 
 
 class Rook : public Piece
 {
 	public:
-	Rook()
-	{
-		
-	}
+	Rook(Color,Square *);
 };
 
 #endif
