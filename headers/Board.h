@@ -3,6 +3,7 @@
 #ifndef BOARD
 	#define BOARD
 
+#include "Square.h"
 
 //A Class that handles all chessboard related stuff
 //Has the current board state
@@ -10,9 +11,9 @@
 
 class Board
 {
-	Board()
-	{
-		
-	}
+	vector<vector<Square>> board;
+
+	public:
+	Board();
 };
 #endif
