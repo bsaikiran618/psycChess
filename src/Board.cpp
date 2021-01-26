@@ -1,17 +1,10 @@
-#include "../headers/Game.h"
-
 #include "../headers/Board.h"
-#include "../headers/Square.h"
-
-#include "../headers/Rook.h"
-#include "../headers/Bishop.h"
-#include "../headers/Knight.h"
-#include "../headers/Pawn.h"
-#include "../headers/King.h"
-#include "../headers/Queen.h"
+#include <iostream>
+using namespace std;
 
 Board::Board()
 {
+
 	//Initialize the first 2 rows and the last 2 rows with the pieces
 	Rook 	blackRook1(BLACK, NULL), 	whiteRook1(WHITE, NULL);
 	Rook 	blackRook2(BLACK, NULL), 	whiteRook2(WHITE, NULL);
@@ -21,6 +14,7 @@ Board::Board()
 	Bishop 	blackBishop2(BLACK, NULL), 	whiteBishop2(WHITE, NULL);
 	King	blackKing(BLACK, NULL),		whiteKing(WHITE, NULL);
 	Queen	blackQueen(BLACK, NULL),	whiteQueen(WHITE, NULL);
+
 	//We add the pawns in a loop later.
 
 	board.push_back(vector<Square>());
@@ -95,5 +89,37 @@ Board::Board()
 	whiteBishop2.setSquare(	&board[7][5]);
 	whiteKnight2.setSquare( &board[7][6]);
 	whiteRook2.setSquare(	&board[7][7]);
+	
 
+	//add the pieces to the vectors.
+
+	whitePieces.push_back(	&whiteRook1, 
+							&whiteRook2, 
+							&whiteKnight1,
+							&whiteKnight2,
+							&whiteBishop1,
+							&whiteBishop2,
+							&whiteKing,
+							&whiteQueen);
+
+	blackPiecs.push_back(	&blackRook1,
+                         	&blackRook2, 
+                         	&blackKnight1,
+                         	&blackKnight2,
+                         	&blackBishop1,
+                         	&blackBishop2,
+                         	&blackKing,
+                         	&blackQueen);
+}
+
+void Board::showBoard()
+{
+	for(int i=0;i<8;i++)
+	{
+		for(int j=0;j<8;j++)
+		{
+			cout << board[i][j].getPiece()->getMarker() << " | ";
+		}
+		cout << endl;
+	}
 }

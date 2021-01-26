@@ -9,12 +9,13 @@
 class Square
 {
 	bool occupied;
-	Piece *p;
+	Piece *piece;
 	public:
 	Square(bool, Piece *);
 	void setPiece(Piece *);
 	void removePiece();
 	bool isOccupied();
+	Piece * getPiece();
 };
 
 #endif

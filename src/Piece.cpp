@@ -1,5 +1,4 @@
 #include "../headers/Piece.h"
-#include "Game.h"
 
 Piece::Piece(Color c, Square s)
 {
@@ -7,6 +6,13 @@ Piece::Piece(Color c, Square s)
 	this.square = s;
 	this.color = c
 }
-Piece::setSquare(Square *s){
+void Piece::setSquare(Square *s)
+{
 	this.square = s;
+}
+string Piece::getMarker()
+{
+	string pieceMark = color == WHITE?"W":"B";
+	pieceMark.push_back(marker;)
+	return pieceMarker;
 }

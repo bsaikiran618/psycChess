@@ -12,8 +12,11 @@
 class Board
 {
 	vector<vector<Square>> board;
-
+	vector<Piece *> whitePieces, blackPieces;
 	public:
 	Board();
+	void showBoard();
+	vector<Piece *> getBlackPieces();
+	vector<Piece *> getWhitePieces();
 };
 #endif
