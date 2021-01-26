@@ -15,10 +15,11 @@ enum Color {
 class Game
 {
 	public:
-	Game()
-	{
-		
-	}
+	Board *board;
+	Player *player1, *player2;
+	
+	Game();
+	void Start();
 };
 
 

@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-Player::Player(Color c, vector<Piece *> pcs, Board *b, bool isComp)
-:playerSide(c), underCheck(false), pieces(pcs), board(b), isComputer(isComp)
+Player::Player(Color c, vector<Piece *> pcs, Board *b, bool isComp, string name)
+:playerSide(c), underCheck(false), pieces(pcs), board(b), isComputer(isComp), playerName(name)
 {
 	cout << "Player " << (c == WHITE?"WHITE":"BLACK") << "Initialized" << endl;
 }

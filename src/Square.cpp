@@ -9,17 +9,15 @@ Square::Square(bool occ, Piece *p)
 }
 void Square::setPiece(Piece *p)
 {
-	this.occupied = true;
 	this.piece = p;
 }
 void Square::removePiece()
 {
-	this.occupied = false;
 	this.piece = NULL;
 }
 bool Square::isOccupied()
 {
-	return occupied;
+	return (piece != NULL)
 }
 bool Square::getPiece()
 {

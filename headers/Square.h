@@ -8,7 +8,6 @@
 //It may be occupied, attacked,
 class Square
 {
-	bool occupied;
 	Piece *piece;
 	public:
 	Square(bool, Piece *);
