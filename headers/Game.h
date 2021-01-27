@@ -2,11 +2,9 @@
 #ifndef GAME
 	#define GAME
 
-
-enum Color {
-	BLACK,
-	WHITE
-};
+#include "Board.h"
+#include "Player.h"
+#include "Color.h"
 
 //A class to hold the current Game state.
 //Has players, and a board

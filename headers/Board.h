@@ -4,6 +4,8 @@
 	#define BOARD
 
 #include "Square.h"
+#include <vector>
+using namespace std;
 
 //A Class that handles all chessboard related stuff
 //Has the current board state

@@ -1,25 +1,24 @@
 #include "../headers/Square.h"
-
+#include "../headers/Piece.h"
 Square::Square(bool occ, Piece *p)
 {
-	this.occupied = occ;
 	//is isOccupied is true, p has a value
 	//else p is set to Null.
-	this.piece = p;
+	this->piece = p;
 }
 void Square::setPiece(Piece *p)
 {
-	this.piece = p;
+	this->piece = p;
 }
 void Square::removePiece()
 {
-	this.piece = NULL;
+	this->piece = NULL;
 }
 bool Square::isOccupied()
 {
-	return (piece != NULL)
+	return (piece != NULL);
 }
-bool Square::getPiece()
+Piece * Square::getPiece()
 {
 	return piece;
 }

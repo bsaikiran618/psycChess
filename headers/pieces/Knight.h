@@ -3,13 +3,13 @@
 	#define KNIGHT
 
 #include "../Piece.h"
-#include "../Game.h"
+#include "../Color.h"
 
 
 class Knight : public Piece
 {
 	public:
-	Knight(bool, Square *);
+	Knight(Color, Square *);
 };
 
 #endif

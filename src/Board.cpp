@@ -1,4 +1,11 @@
 #include "../headers/Board.h"
+#include "../headers/pieces/Rook.h"
+#include "../headers/pieces/Knight.h"
+#include "../headers/pieces/King.h"
+#include "../headers/pieces/Queen.h"
+#include "../headers/pieces/Bishop.h"
+#include "../headers/pieces/Pawn.h"
+
 #include <iostream>
 using namespace std;
 
@@ -52,7 +59,7 @@ Board::Board()
 
 	for(int i=2;i<6;i++)
 	{
-		board.push_back(vector<Square>())
+		board.push_back(vector<Square>());
 		for(int j=0;j<8;j++)
 		{
 			board[i].push_back(Square(false, NULL));
@@ -93,23 +100,23 @@ Board::Board()
 
 	//add the pieces to the vectors.
 
-	whitePieces.push_back(	&whiteRook1, 
-							&whiteRook2, 
-							&whiteKnight1,
-							&whiteKnight2,
-							&whiteBishop1,
-							&whiteBishop2,
-							&whiteKing,
-							&whiteQueen);
+	whitePieces.push_back(	&whiteRook1);
+	whitePieces.push_back(	&whiteRook2);
+	whitePieces.push_back(	&whiteKnight1);
+	whitePieces.push_back(	&whiteKnight2);
+	whitePieces.push_back(	&whiteBishop1);
+	whitePieces.push_back(	&whiteBishop2);
+	whitePieces.push_back(	&whiteKing);
+	whitePieces.push_back(	&whiteQueen);
 
-	blackPiecs.push_back(	&blackRook1,
-                         	&blackRook2, 
-                         	&blackKnight1,
-                         	&blackKnight2,
-                         	&blackBishop1,
-                         	&blackBishop2,
-                         	&blackKing,
-                         	&blackQueen);
+	blackPieces.push_back(	&blackRook1);
+    blackPieces.push_back(   &blackRook2); 
+    blackPieces.push_back(   &blackKnight1);
+    blackPieces.push_back(   &blackKnight2);
+    blackPieces.push_back(   &blackBishop1);
+    blackPieces.push_back(   &blackBishop2);
+    blackPieces.push_back(   &blackKing);
+    blackPieces.push_back(   &blackQueen);
 }
 
 void Board::showBoard()
@@ -122,4 +129,12 @@ void Board::showBoard()
 		}
 		cout << endl;
 	}
+}
+vector<Piece *> Board::getBlackPieces()
+{
+	return blackPieces;
+}
+vector<Piece *> Board::getWhitePieces()
+{
+	return whitePieces;
 }

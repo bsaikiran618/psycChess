@@ -2,10 +2,11 @@
 #ifndef PLAYER
 	#define PLAYER
 
-#include "../headers/Game.h"
+#include "../headers/Color.h"
 #include "../headers/Board.h"
 #include <vector>
 #include <string>
+using namespace std;
 
 //A class to keep track of player information
 //A player can be a human or a computer.
@@ -13,7 +14,7 @@
 class Player
 {
 	//data
-	String playerName;
+	string playerName;
 	vector<Piece *> pieces; // The player's chesspieces.
 	Board *board;
 	Color playerSide;

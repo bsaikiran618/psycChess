@@ -1,18 +1,20 @@
 #include "../headers/Game.h"
 #include "../headers/Player.h"
 #include "../headers/Board.h"
-
+#include <string>
+#include <iostream>
+using namespace std;
 
 Game::Game()
 {
-	String name1, name2;
+	string name1, name2;
 	Color c1, c2;
-	this.board = Board();
+	this->board = new Board();
 	
+	int mode = 0;
 	//Let player1 be the human
 	while(1)
 	{
-		int mode = 0;
 		std::cout << "Choose Gameplay mode:" << std::endl;
 		std::cout << "1. Human vs. Human" << std::endl;
 		std::cout << "2. Human vs. Computer" << std::endl;
@@ -29,10 +31,10 @@ Game::Game()
 
 		std::cout << "PLAYER1, Enter your name:" << std::endl;
 		
+		char ch = '\0';
 		while(1)
 		{
 			std::cout << "Which side do you want to play?(B/W)" << std::endl;
-			char ch = '\0';
 			std::cin >> ch;
 			if(ch == 'B' || ch == 'W') break;
 			std::cout << "Invalid choice" << std::endl;
@@ -45,20 +47,20 @@ Game::Game()
 		
 		if(c1 == WHITE)
 		{
-			player1 = Player(c1, board.getWhitePieces(),board, false, name1);
-			player2 = Player(c2, board.getBlackPieces(),board, false, name2);
+			player1 = new Player(c1, board->getWhitePieces(),board, false, name1);
+			player2 = new Player(c2, board->getBlackPieces(),board, false, name2);
 		}
 		else
 		{
-			player1 = Player(c1, board.getBlackPieces(),board, false, name1);
-			player2 = Player(c2, board.getWhitePieces(),board, false, name2);
+			player1 = new Player(c1, board->getBlackPieces(),board, false, name1);
+			player2 = new Player(c2, board->getWhitePieces(),board, false, name2);
 		}
 	}
 	else
 	{
 		//Human vs. Computer
 		std::cout << "Enter your name:" << std::endl;
-		std::cin >> name1 >> endl;
+		std::cin >> name1;
 		char ch = '\0';
 		while(1)
 		{
@@ -71,18 +73,18 @@ Game::Game()
 		c2 = (c1 == BLACK)?WHITE:BLACK;
 		if(c1 == WHITE)
 		{
-			player1 = Player(c1, board.getWhitePieces(), board, name1);
-			player2 = Player(c2, board.getBlackPieces(), board, "Computer");
+			player1 = new Player(c1, board->getWhitePieces(), board, false, name1);
+			player2 = new Player(c2, board->getBlackPieces(), board, true, "Computer");
 		}
 		else
 		{
-			player1 = Player(c1, board.getBlackPieces(), board, name1);
-			player2 = Player(c2, board.getWhitePieces(), board, "Computer");
+			player1 = new Player(c1, board->getBlackPieces(), board, false, name1);
+			player2 = new Player(c2, board->getWhitePieces(), board, true, "Computer");
 		}
 	}
 }
 void Game::Start()
 {	
 	//The main game loop
-	board.showBoard();
+	board->showBoard();
 }
